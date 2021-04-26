@@ -8,7 +8,7 @@ interface ProductParams {
   product: string;
 }
 
-interface Product {
+interface ProductItem {
   id: number;
   title: string;
   price: number;
@@ -19,19 +19,23 @@ const Product: React.FC = () => {
   const history = useHistory();
 
   const { params } = useRouteMatch<ProductParams>();
-  const [product, setProduct] = useState<Product>();
+  const [product, setProduct] = useState<ProductItem>();
 
-  const [title, setTitle] = useState('');
-  const [quantity, setQuantity] = useState('');
-  const [price, setPrice] = useState('');
+  const [title, setTitle] = useState(product?.title || '');
+  const [quantity, setQuantity] = useState(product?.quantity || '');
+  const [price, setPrice] = useState(product?.price || '');
 
   useEffect(() => {
     if(params.product){
       api.get(`product/${params.product}`).then(response => {
         setProduct(response.data);
+        setTitle(response.data.title);
+        setQuantity(response.data.quantity);
+        setPrice(response.data.price);
       });
     }
-  }, [])
+    
+  }, [params.product])
 
   async function handleAddProduct() {
     await api.post('products', {

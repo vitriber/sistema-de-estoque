@@ -79,7 +79,7 @@ $ yarn install
 $ npm knex:migrate
 
 # Execute as seeds
-$ npm knex:seeds
+$ npm knex:seed
 
 # Para iniciar o servidor
 $ yarn dev
@@ -99,7 +99,7 @@ $ yarn start
 
 Essas são as tecnologias utilizadas nesse projeto
 
-💻- [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/pt-br/), [TypeScript](https://www.typescriptlang.org/), [React](https://reactjs.org/), [SAAS](https://sass-lang.com/), [Redux](https://redux.js.org/)
+💻- [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/pt-br/), [TypeScript](https://www.typescriptlang.org/), [React](https://reactjs.org/), [SASS](https://sass-lang.com/), [Redux](https://redux.js.org/)
 
 
 ---
